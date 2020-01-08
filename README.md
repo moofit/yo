@@ -220,3 +220,10 @@ The next step in Yo's development will be to get it ready for Swift 4 and macOS 
 * Allow notifications to be delivered up to `x` number of times rather than just once.
 * Add a blacklist of users to whom notifications should not be delivered.
 * Add a delivery delay property to the scheduler. Notifications are delivered immediately to the current user, and as soon as possible after login for users not active at the time the notification is scheduled. This would allow it to be delayed slightly longer.
+
+### How to Pull from Community yo
+
+1. Clone this repo
+2. Change directory to this repo, and run `git remote add upstream https://github.com/sheagcraig/yo`
+3. This will pull down changes from the master repo, and attempt to merge
+4. Fix all merges, and push back up to moof's Yo repo when ready `git push`
