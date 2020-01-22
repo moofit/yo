@@ -1,10 +1,61 @@
-#!/bin/bash
+#!/usr/bin/env sh
 
 # Weirdly, yo doesn't overwrite it's old app; instead it makes a
 # localized folder. Just erase it first.
-rm -rf /Applications/Utilities/yo.app
-rm -rf /Applications/Utilities/yo
-rm -rf /Applications/Utilities/yo.localized
+test -e /Applications/Utilities/yo.app && \
+    rm -rf /Applications/Utilities/yo.app
+test -e /Applications/Utilities/yo && \
+    rm -rf /Applications/Utilities/yo
+test -e /Applications/Utilities/yo.localized && \
+    rm -rf /Applications/Utilities/yo.localized
+test -e /Applications/Utilities/moofBark.app && \
+    rm -rf /Applications/Utilities/moofBark.app
+test -e /Applications/Utilities/moofBark && \
+    rm -rf /Applications/Utilities/moofBark
+test -e /Applications/Utilities/moofBark.localized && \
+    rm -rf /Applications/Utilities/moofBark.localized
+
+# Unload our launch agents in the background for the logged in user
+CONSOLE_UID=$(/usr/bin/stat -f%u /dev/console)
+echo "User is $CONSOLE_UID"
+if [ $CONSOLE_UID -gt 499 ]
+then
+    # Remove all Yo & moofBark LaunchAgents
+    if [ -e /Library/LaunchAgents/com.sheagcraig.yo.login_once.plist ];
+    then
+        /bin/launchctl asuser $CONSOLE_UID \
+            /bin/launchctl unload -w \
+            /Library/LaunchAgents/com.sheagcraig.yo.login_once
+        rm /Library/LaunchAgents/com.sheagcraig.yo.login_once.plist
+    fi
+
+    if [ -e /Library/LaunchAgents/com.sheagcraig.yo.on_demand.plist ];
+    then
+        /bin/launchctl asuser $CONSOLE_UID \
+            /bin/launchctl unload -w \
+            /Library/LaunchAgents/com.sheagcraig.yo.on_demand.plist
+        rm /Library/LaunchAgents/com.sheagcraig.yo.on_demand.plist
+    fi
+
+    if [ -e /Library/LaunchAgents/uk.co.moof-it.moofBark.login_once.plist ];
+    then
+        /bin/launchctl asuser $CONSOLE_UID \
+            /bin/launchctl unload -w \
+            /Library/LaunchAgents/uk.co.moof-it.moofBark.login_once.plist
+        rm /Library/LaunchAgents/uk.co.moof-it.moofBark.login_once.plist
+    fi
+
+    if [ -e /Library/LaunchAgents/uk.co.moof-it.moofBark.on_demand.plist ];
+    then
+        /bin/launchctl asuser $CONSOLE_UID \
+            /bin/launchctl unload -w \
+            /Library/LaunchAgents/uk.co.moof-it.moofBark.on_demand.plist
+        rm /Library/LaunchAgents/uk.co.moof-it.moofBark.on_demand.plist
+    fi
+fi
+
+# Remove pkg receipt for moofBark if about
+/usr/sbin/pkgutil --forget uk.co.moof-it.moofBark
 
 WATCH_PATH="$3/var/run/com.sheagcraig.yo.on_demand.launchd"
 
