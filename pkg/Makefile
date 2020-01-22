@@ -1,5 +1,6 @@
 include /usr/local/share/luggage/luggage.make
 
+USE_PKGBUILD=1
 TITLE=yo
 REVERSE_DOMAIN=com.sheagcraig
 PAYLOAD=\
@@ -10,4 +11,4 @@ PAYLOAD=\
 		pack-script-postinstall \
 		pack-script-preinstall \
 
-PACKAGE_VERSION=$(shell defaults read "$(PWD)/yo.app/Contents/Info.plist" CFBundleShortVersionString)
+PACKAGE_VERSION=$(shell defaults read "$(PWD)/yo.app/Contents/Info.plist" CFBundleVersion)-$(shell defaults read "$(PWD)/yo.app/Contents/Info.plist" CFBundleShortVersionString)
