@@ -1,3 +1,4 @@
 *.pyc
 *.app
 *.pkg
+.DS_Store
