@@ -52,9 +52,6 @@ Yo differs from [terminal-notifier](https://github.com/alloy/terminal-notifier) 
 persistent notifications that remain in place until clicked. As such, it allows you to customize
 these buttons and their actions. Also, it allows you to customize the application icon displayed.
 
-If you just want a notification, download the current installer package from the
-[releases](https://github.com/sheagcraig/yo/releases) page.
-
 You can customize the icon used in the notifications by providing the `-i` argument. However, if you
 want to permanently customize the icon/app name/etc, you can modify the XCode project and build it
 yourself. Instructions are provided below.
@@ -95,7 +92,8 @@ Yo, as called through the `yo_scheduler`, has the following arguments. The only 
 Test all notifications prior to delivery, as the maximum line-length of characters differs for the title, subtitle, and info fields, which in turn can be compressed even shorter when the length of the action or cancel buttons grows beyond 8 characters.
 
 This notification demonstrates the available content areas. Not all of these are required!
-![Yo example](https://github.com/sheagcraig/yo/blob/testing/docs/NotificationAreas.png?raw=true)
+
+![Yo example](https://bitbucket.org/moofit/yo/src/de967caf2296190e91d966f81d6c4f0a06bea6d3/docs/NotificationAreas.png)
 
 #### Notification Body Content Arguments
 The following arguments control the body text for the notification. When the buttons fit in their normal sizes, they have the below mentioned maximum character legnths. However, the layout of the notification is elastic to allow longer button text at the expense of body text.
