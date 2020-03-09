@@ -93,7 +93,7 @@ Test all notifications prior to delivery, as the maximum line-length of characte
 
 This notification demonstrates the available content areas. Not all of these are required!
 
-![Yo example](https://bitbucket.org/moofit/yo/src/de967caf2296190e91d966f81d6c4f0a06bea6d3/docs/NotificationAreas.png)
+![Yo example](https://bitbucket.org/moofit/yo/raw/5a30c1fc551b6d02a3ac2bfe2f2048b4de3e1d6d/docs/NotificationAreas.png)
 
 #### Notification Body Content Arguments
 The following arguments control the body text for the notification. When the buttons fit in their normal sizes, they have the below mentioned maximum character legnths. However, the layout of the notification is elastic to allow longer button text at the expense of body text.
