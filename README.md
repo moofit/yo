@@ -1,10 +1,10 @@
 ![Logo](https://x1llu7x4a4-flywheel.netdna-ssl.com/wp-content/themes/moof/images/logo.svg)
 
-# yo
+# yo (macOS Notifications)
 
 ## Table of Contents
 
-- [yo](#yo)
+- [yo (macOS Notifications)](#yo-macos-notifications)
   - [Table of Contents](#table-of-contents)
   - [Purpose](#purpose)
   - [Build & Installation](#build--installation)
