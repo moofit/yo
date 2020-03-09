@@ -1,7 +1,34 @@
-# Yo: Custom User Notifications with Swift
+![Logo](https://x1llu7x4a4-flywheel.netdna-ssl.com/wp-content/themes/moof/images/logo.svg)
 
-## Overview
-![Yo example](https://github.com/sheagcraig/yo/blob/testing/docs/example.png?raw=true)
+# yo
+
+## Table of Contents
+
+- [yo](#yo)
+  - [Table of Contents](#table-of-contents)
+  - [Purpose](#purpose)
+  - [Build & Installation](#build--installation)
+  - [Package build and deployment](#package-build-and-deployment)
+  - [Usage](#usage)
+    - [Note:](#note)
+    - [Arguments:](#arguments)
+      - [Notification Body Content Arguments](#notification-body-content-arguments)
+      - [Notification Button Arguments](#notification-button-arguments)
+      - [Delivery Arguments](#delivery-arguments)
+      - [Other Arguments](#other-arguments)
+  - [Emoji](#emoji)
+  - [Examples](#examples)
+  - [Catalina+](#catalina)
+  - [Application Icon, Caveats, and Nerdery](#application-icon-caveats-and-nerdery)
+    - [Icons](#icons)
+    - [The other nerdery](#the-other-nerdery)
+  - [How to contribute](#how-to-contribute)
+  - [Support](#support)
+  - [License](#license)
+  
+## Purpose
+
+Forked from https://github.com/sheagcraig/yo
 
 Yo is a simple app for sending custom, *persistent* native Cocoa notifications to the Notification
 Center in macOS 10.10+. It allows customizing all of the various notification text fields and button labels, the sound
@@ -36,6 +63,7 @@ Finally, thanks to @jatoben for the gracious sharing of his Swift
 [CommandLine](https://github.com/jatoben/CommandLine) library/Framework on GitHub.
 
 ## Build & Installation
+
 You only need to follow these instructions if you want to build the app
 yourself. Obviously, you'll need a recent XCode.
 
@@ -213,17 +241,20 @@ Of course, your results may vary. If you can't get the "alert" style notificatio
 
 The scheduler stores notifications to be delivered in the CFPreferences system. The scheduled notifications are (eventually) stored in `/Library/Preferences/com.sheagcraig.yo.plist`, and the delivery receipts are stored in `~/Library/Preferences/com.sheagcraig.yo.plist`. To grow future scheduling options, the structure of these preferences will probably change, so do not rely on the current structure.
 
-### What's next?
-The next step in Yo's development will be to get it ready for Swift 4 and macOS 10.13, and to add to the scheduling arguments provided by the `yo_scheduler` app. 
+## How to contribute
 
-* Specify a date after which scheduled notifications will no longer be delivered (for users who haven't already gotten them). 
-* Allow notifications to be delivered up to `x` number of times rather than just once.
-* Add a blacklist of users to whom notifications should not be delivered.
-* Add a delivery delay property to the scheduler. Notifications are delivered immediately to the current user, and as soon as possible after login for users not active at the time the notification is scheduled. This would allow it to be delayed slightly longer.
+1. Fork this project, if required
+2. Create a new branch (`git checkout -b myNewBranch`)
+3. Make changes, and commit (`git commit -am "myChanges"`)
+4. Push to the new branch (`git push origin myNewBranch`)
+5. Create new pull request
 
-### How to Pull from Community yo
+## Support
 
-1. Clone this repo
-2. Change directory to this repo, and run `git remote add upstream https://github.com/sheagcraig/yo`
-3. This will pull down changes from the master repo, and attempt to merge
-4. Fix all merges, and push back up to moof's Yo repo when ready `git push`
+Use at your own risk. Moof IT will accept no responsibility for loss or damage caused by these scripts. Contact Moof IT if you need a custom script tailored to your environment.
+
+## License
+
+This work is licensed under http://creativecommons.org/licenses/by/4.0/.
+
+These scripts may be freely modified for personal or commercial purposes but may not be republished for profit without prior consent.
